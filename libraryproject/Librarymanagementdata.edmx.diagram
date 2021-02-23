@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77f9084103784a91949c6199feff0308" Name="Diagram1">
+        <EntityTypeShape EntityType="library_management_systemModel.BookFineTable" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_management_systemModel.BookReturnTable" Width="1.5" PointX="11.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_management_systemModel.BookTable" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_management_systemModel.BookTypeTable" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_management_systemModel.DepartmentTable" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_management_systemModel.IssueBookTable" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_management_systemModel.StudentTable" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_management_systemModel.StudentTypeTable" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_management_systemModel.login" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="library_management_systemModel.FK_BookFineTable_BookTable" ManuallyRouted="false" />
+        <AssociationConnector Association="library_management_systemModel.FK_BookFineTable_StudentTable" ManuallyRouted="false" />
+        <AssociationConnector Association="library_management_systemModel.FK_BookReturnTable_BookTable" ManuallyRouted="false" />
+        <AssociationConnector Association="library_management_systemModel.FK_BookReturnTable_StudentTable" ManuallyRouted="false" />
+        <AssociationConnector Association="library_management_systemModel.FK_BookTable_BookTypeTable" ManuallyRouted="false" />
+        <AssociationConnector Association="library_management_systemModel.FK_BookTable_DepartmentTable" ManuallyRouted="false" />
+        <AssociationConnector Association="library_management_systemModel.FK_IssueBookTable_BookTable" ManuallyRouted="false" />
+        <AssociationConnector Association="library_management_systemModel.FK_StudentTable_DepartmentTable" ManuallyRouted="false" />
+        <AssociationConnector Association="library_management_systemModel.FK_IssueBookTable_StudentTable" ManuallyRouted="false" />
+        <AssociationConnector Association="library_management_systemModel.FK_StudentTable_StudentTypeTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

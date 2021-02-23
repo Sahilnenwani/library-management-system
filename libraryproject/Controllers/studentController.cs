@@ -9,13 +9,51 @@ namespace libraryproject.Controllers
     public class studentController : Controller
     {
         // GET: student
+        //[HttpGet]
         public ActionResult createstudent()
         {
             return View();
         }
-        public ActionResult ManageStudent()
+        //[HttpPost]
+        //public ActionResult createstudent()
+        //{
+        //    return View();
+        //}
+        
+        //[HttpGet]
+        public ActionResult ViewStudent()
         {
             return View();
         }
+        //[HttpPost]
+        //public ActionResult ViewStudent()
+        //{
+        //    return View();
+        //}
+
+
+        //[HttpGet]
+        public ActionResult updateStudent()
+        {
+            return View();
+        }
+        //[HttpPost]
+        //public ActionResult updateStudent()
+        //{
+        //    return View();
+        //}
+
+
+        //[HttpGet]
+        public ActionResult deleteStudent()
+        {
+            return View();
+        }
+        //[HttpPost]
+        //public ActionResult deleteStudent()
+        //{
+        //    return View();
+        //}
+
     }
 }

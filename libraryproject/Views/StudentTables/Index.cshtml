@@ -1,0 +1,145 @@
+﻿@model IEnumerable<libraryproject.StudentTable>
+
+@{
+    ViewBag.Title = "Manage Student";
+    Layout = "~/Views/Shared/sharedview.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentTable.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentTypeTable.StudentType)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentTable.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentTypeTable.StudentType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">STUDENT DATA</h4>
+                @*<p class="card-category"> Here is a subtitle for this table</p>*@
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                           Student ID
+                        </th>
+                        <th>
+                            Student Name
+                        </th>
+                        <th>
+                            Department Name
+                        </th>
+                        <th>
+                            Student Type
+                        </th>
+                        <th>
+                            ISActive
+                        </th>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StudentID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StudentName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DepartmentTable.Name)
+
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StudentTypeTable.StudentType)
+
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IsActive)
+                                    </td>
+                                    <td @*class="text-primary"*@>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
+                                    </td>
+   
+                                </tr>
+
+                            </tbody>
+                        }
+                           </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+
+
+
+
+

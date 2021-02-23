@@ -70,3 +70,7 @@ H:\libraryproject\libraryproject\obj\Debug\libraryproject.csproj.CoreCompileInpu
 H:\libraryproject\libraryproject\obj\Debug\libraryproject.csproj.CopyComplete
 H:\libraryproject\libraryproject\obj\Debug\libraryproject.dll
 H:\libraryproject\libraryproject\obj\Debug\libraryproject.pdb
+H:\libraryproject\libraryproject\bin\EntityFramework.dll
+H:\libraryproject\libraryproject\bin\EntityFramework.SqlServer.dll
+H:\libraryproject\libraryproject\bin\EntityFramework.xml
+H:\libraryproject\libraryproject\bin\EntityFramework.SqlServer.xml
