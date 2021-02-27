@@ -1918,7 +1918,11 @@
     </Compile>
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\bookController.cs" />
+    <Compile Include="Controllers\BookFineTablesController.cs" />
+    <Compile Include="Controllers\BookReturnTablesController.cs" />
+    <Compile Include="Controllers\BookTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IssueBookTablesController.cs" />
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\studentController.cs" />
     <Compile Include="Controllers\StudentTablesController.cs" />
@@ -2424,6 +2428,25 @@
     <Content Include="Views\StudentTables\Details.cshtml" />
     <Content Include="Views\StudentTables\Edit.cshtml" />
     <Content Include="Views\StudentTables\Index.cshtml" />
+    <Content Include="Views\BookTables\Create.cshtml" />
+    <Content Include="Views\BookTables\Delete.cshtml" />
+    <Content Include="Views\BookTables\Details.cshtml" />
+    <Content Include="Views\BookTables\Edit.cshtml" />
+    <Content Include="Views\BookTables\Index.cshtml" />
+    <Content Include="Views\BookReturnTables\Create.cshtml" />
+    <Content Include="Views\BookReturnTables\Delete.cshtml" />
+    <Content Include="Views\BookReturnTables\Details.cshtml" />
+    <Content Include="Views\BookReturnTables\Edit.cshtml" />
+    <Content Include="Views\BookReturnTables\Index.cshtml" />
+    <Content Include="Views\BookFineTables\Create.cshtml" />
+    <Content Include="Views\BookFineTables\Delete.cshtml" />
+    <Content Include="Views\BookFineTables\Details.cshtml" />
+    <Content Include="Views\BookFineTables\Edit.cshtml" />
+    <Content Include="Views\BookFineTables\Index.cshtml" />
+    <Content Include="Views\IssueBookTables\Create.cshtml" />
+    <Content Include="Views\IssueBookTables\Delete.cshtml" />
+    <Content Include="Views\IssueBookTables\Edit.cshtml" />
+    <Content Include="Views\IssueBookTables\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

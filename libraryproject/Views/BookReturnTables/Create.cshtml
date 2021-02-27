@@ -1,0 +1,122 @@
+﻿@model libraryproject.BookReturnTable
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/sharedview.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>BookReturnTable</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="bmd-label-floating">Return ID</label>
+                <input type="text" class="form-control" disabled>
+            </div>
+        </div>
+
+
+        <div class="col-md-3">
+            <div class="nav-item dropdown">
+                <label class="bmd-label-floating">Book ID</label>
+                @Html.DropDownList("BookID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                @*@Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "form-control" })*@
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="nav-item dropdown">
+                <label class="bmd-label-floating">Student ID</label>
+                @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                @*@Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "form-control" })*@
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<div class="form-group">
+        @Html.LabelFor(model => model.BookID, "BookID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("BookID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.BookID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">-->
+        @*@Html.LabelFor(model => model.StudentID, "StudentID", htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <!--<div class="col-md-10">
+            <label class="bmd-label-floating">Book ID</label>
+
+            @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+        </div>
+    </div>-->
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.IssueDate, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            <label class="bmd-label-floating">Issue Date</label>
+
+            @Html.EditorFor(model => model.IssueDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IssueDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.ReturnDate, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            <label class="bmd-label-floating">Return Date</label>
+
+            @Html.EditorFor(model => model.ReturnDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ReturnDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.CurrentDate, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            <label class="bmd-label-floating">Current Date</label>
+            @Html.EditorFor(model => model.CurrentDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CurrentDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary pull-center">Create</button>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

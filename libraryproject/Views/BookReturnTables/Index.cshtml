@@ -1,0 +1,132 @@
+﻿@model IEnumerable<libraryproject.BookReturnTable>
+
+@{
+    ViewBag.Title = "Book Return Manage";
+    Layout = "~/Views/Shared/sharedview.cshtml";
+}
+
+
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Return Table</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Return ID</th>
+                        <th>Issue Date</th>
+                        <th>Return Date</th>
+                        <th>Current Date</th>
+                        <th>Book Title</th>
+                        <th>Student Name</th>
+                        <th>  @Html.ActionLink("Create New", "Create")</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BookReturnID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IssueDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReturnDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CurrentDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BookTable.BookTitle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StudentTable.StudentName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.BookReturnID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.BookReturnID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.BookReturnID })
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IssueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookTable.BookTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentTable.StudentName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookTable.BookTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentTable.StudentName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BookReturnID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BookReturnID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BookReturnID })
+            </td>
+        </tr>
+    }
+
+</table>*@

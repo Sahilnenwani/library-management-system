@@ -52,7 +52,7 @@
         <div class="col-md-3">
             <div class="form-group">
                 <label class="bmd-label-floating">Student ID</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" disabled>
             </div>
         </div>
         <div class="col-md-3">
@@ -74,37 +74,40 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <div class="nav-item dropdown"   @*dropdown*@>
+            <div class="nav-item dropdown" @*dropdown*@>
+
                 <label class="bmd-label-floating">Department ID</label>
-                @Html.DropDownList("DepartmentID",null, htmlAttributes: new { @lass = "nav-link dropdown-toggle", @class="rbgwhitelink" })
+                @Html.DropDownList("DepartmentID", null, htmlAttributes: new { @lass = "nav-link dropdown-toggle", @class = "rbgwhitelink" })
                 @*@Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "form-control" })*@
 
             </div>
         </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsActive)
-                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsActive)
+                        @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+        <button type="submit" class="btn btn-primary pull-center">Create</button>
+        <div class="clearfix"></div>
+
     </div>
-
-
-
-
-
-
-
-
-
-
-    <button type="submit" class="btn btn-primary pull-center">Create</button>
-    <div class="clearfix"></div>
-
-</div>
 }
 
 <div>
