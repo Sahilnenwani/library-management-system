@@ -11,14 +11,20 @@ namespace libraryproject
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class IssueBookTable
     {
         public int IssueBookID { get; set; }
         public int StudentID { get; set; }
         public int BookID { get; set; }
+        [Required(ErrorMessage = "Please enter Copies")]
+        [Range(1,2, ErrorMessage = "Please enter valid Edition")]
         public int IssueCopies { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public System.DateTime IssueDate { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public System.DateTime ReturnDate { get; set; }
         public bool Status { get; set; }
         public string Description { get; set; }

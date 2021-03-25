@@ -1,69 +1,145 @@
 ﻿@model libraryproject.StudentTable
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Student";
+    Layout = "~/Views/Shared/sharedview.cshtml";
+}
+@*@Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/sharedview.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Create</h2>*@
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>StudentTable</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.StudentID)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.StudentName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.StudentName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger" })
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.StudentID)
+
+
+
+
+
+    <div class="row">
+        
+    </div>
+    <div class="row" style="margin-top:30px">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label class="bmd-label-floating">Student Name</label>
+                @Html.TextBoxFor(model => model.StudentName, null, new
+                {
+                    @class = "form-control"@*, placeholder = "First Name"*@})
+                @Html.ValidationMessageFor(model => model.StudentName)
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="nav-item dropdown">
+                <label class="bmd-label-floating">Student Type</label>
+                @Html.DropDownList("StuentTypeID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                @*@Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "form-control" })*@
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:30px">
+        <div class="col-md-4">
+            <div class="nav-item dropdown" @*dropdown*@>
+
+                <label class="bmd-label-floating">Department ID</label>
+                @Html.DropDownList("DepartmentID", null, htmlAttributes: new { @lass = "nav-link dropdown-toggle", @class = "rbgwhitelink" })
+                @*@Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "form-control" })*@
+
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.StuentTypeID, "StuentTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("StuentTypeID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DepartmentID, "DepartmentID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("DepartmentID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
+        <div class="form-group" style="margin-top:-20px">
             @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-4">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.IsActive)
                     @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-8 offset-4 row">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="col">
+                <input type="submit" class="btn btn-primary  w-100" value="Update" />
             </div>
+            <div class="col">
+                @*<a asp-action="Index" class="btn btn-primary w-100"><i class="fas fa-sign-out-alt"></i>Back</a>*@
+                <a href="@Url.Action("Index","StudentTables")" class="btn btn-primary w-100">
+                    <i class="fas fa-sign-out-alt"></i> &nbsp; Back
+                </a>
+
+
+            </div>
+
+
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+
+
+
+
+
+
+
+
+
+    @*<button type="submit" class="btn btn-primary pull-center">Create</button>
+        <div class="clearfix"></div>*@
+
 </div>
+}
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+
+
+
+
+
+
+

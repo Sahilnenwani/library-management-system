@@ -11,14 +11,20 @@ namespace libraryproject
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class BookReturnTable
     {
         public int BookReturnID { get; set; }
         public int BookID { get; set; }
         public int StudentID { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public System.DateTime IssueDate { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public System.DateTime ReturnDate { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public System.DateTime CurrentDate { get; set; }
     
         public virtual BookTable BookTable { get; set; }

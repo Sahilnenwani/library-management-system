@@ -4,12 +4,16 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using libraryproject;
+using libraryproject.filters;
 
 namespace libraryproject.Controllers
 {
+    [Authorize]
+    [AuthorizedUser]
     public class BookReturnTablesController : Controller
     {
         private library_management_systemEntities1 db = new library_management_systemEntities1();
@@ -97,32 +101,51 @@ namespace libraryproject.Controllers
             ViewBag.StudentID = new SelectList(db.StudentTables, "StudentID", "StudentName", bookReturnTable.StudentID);
             return View(bookReturnTable);
         }
+        public async Task<ActionResult> Delete(int? id)
+        {
+            var bookreturn = await db.BookReturnTables.FindAsync(id);
+            db.BookReturnTables.Remove(bookreturn);
+            await db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+            //if (id == null || id == 0)
+            //{
+            //    return NotFound();
+            //}
+            //var obj = _db.Categary.Find(id);
+            //if (obj == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //return View(obj);
+        }
 
         // GET: BookReturnTables/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BookReturnTable bookReturnTable = db.BookReturnTables.Find(id);
-            if (bookReturnTable == null)
-            {
-                return HttpNotFound();
-            }
-            return View(bookReturnTable);
-        }
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    BookReturnTable bookReturnTable = db.BookReturnTables.Find(id);
+        //    if (bookReturnTable == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(bookReturnTable);
+        //}
 
-        // POST: BookReturnTables/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            BookReturnTable bookReturnTable = db.BookReturnTables.Find(id);
-            db.BookReturnTables.Remove(bookReturnTable);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //// POST: BookReturnTables/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    BookReturnTable bookReturnTable = db.BookReturnTables.Find(id);
+        //    db.BookReturnTables.Remove(bookReturnTable);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {

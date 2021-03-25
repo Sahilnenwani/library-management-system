@@ -28,15 +28,19 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Book ID</th>
-                        <th>Book Title</th>
-                        <th>Author</th>
-                        <th>Book Name</th>
-                        <th>Edition</th>
-                        <th>Copies</th>
-                        <th>Book Type</th>
-                        <th>Department</th>
-                        <th>      @Html.ActionLink("Create New", "Create")</th>
+                        <th style="color:white">Book ID</th>
+                        <th style="color:white">Book Title</th>
+                        <th style="color:white">Author</th>
+                        <th style="color:white">Book Name</th>
+                        <th style="color:white">Edition</th>
+                        <th style="color:white">Copies</th>
+                        <th style="color:white">Book Type</th>
+                        <th style="color:white">Department</th>
+                        <th style="text-align:center">
+                            <a href="@Url.Action("Create","BookTables")" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> &nbsp; Create New
+                            </a>
+                        </th>
                     </tr>
                 </thead>
 
@@ -72,10 +76,20 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.DepartmentTable.Name)
                         </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.BookID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.BookID })
+                        <td style="text-align:center">
+
+                            <a href="@Url.Action("Edit", "BookTables", new { id = item.BookID })" class="btn btn-primary mx-2">
+                                <i class="fas fa-edit"></i>
+
+                            </a>
+                            <a href="@Url.Action("Delete", "BookTables", new { id = item.BookID })" class="btn btn-danger mx-2" onclick=" confirm('Are you sure to delete this record')">
+                                <i class="fas fa-trash-alt"></i>
+
+                            </a>
+
+
                         </td>
+
                     </tr>
                     }
 

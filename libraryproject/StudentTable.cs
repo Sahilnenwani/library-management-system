@@ -11,7 +11,7 @@ namespace libraryproject
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class StudentTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,6 +23,7 @@ namespace libraryproject
         }
     
         public int StudentID { get; set; }
+        [Required(ErrorMessage = "Please enter Book Name"), MaxLength(30)]
         public string StudentName { get; set; }
         public int StuentTypeID { get; set; }
         public int DepartmentID { get; set; }

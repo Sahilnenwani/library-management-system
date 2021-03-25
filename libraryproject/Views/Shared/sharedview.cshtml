@@ -32,74 +32,79 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="~/Template/assets/demo/demo.css" rel="stylesheet" />
     <link href="~/Template/links/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="~/Template/fontausome/css/all.css" rel="stylesheet" />
 
 </head>
 
 <body class="dark-edition">
     <div class="wrapper ">
-        <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+        <div class="sidebar" data-color="purple" data-background-color="black" data-image="/Template/assets/img/sidebar-2.jpg">
             <!--
                 Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
                 Tip 2: you can also add an image using data-image tag
             -->
-            <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                    Library Management System
-                </a>
+            <div class="simple-text logo-normal logo">
+                <H1>
+                    Library
+                </H1>
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
                     <li class="nav-item active  ">
                         <a class="nav-link"
-                           href="@Url.Action("createstudent","student")">Student
-                        <i class="material-icons">Student</i>
+                           href="@Url.Action("Create","StudentTables")">
+                            <i class="fas fa-user-plus"></i> &nbsp;Student
                         </a>
                         @*<i class="material-icons">Student</i>*@
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link"
-                           href="@Url.Action("ViewStudent","student")">
+                           href="@Url.Action("Index","StudentTables")">
                             Manage Student
-                            <i class="material-icons">person</i>
+                            <i class="fas fa-users"></i>
                         </a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link"
-                           href="@Url.Action("Addbook","book")">
+                           href="@Url.Action("Create","BookTables")">
                             Add Book
                             <i class="material-icons">content_paste</i>
                       </a> 
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link"
-                           href="@Url.Action("Managebook","book")">
+                           href="@Url.Action("Index","BookTables")">
                             Manage Book
                             <i class="material-icons">library_books</i>
                        </a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link"
-                           href="@Url.Action("Issuebook","book")">
+                           href="@Url.Action("Create","IssueBookTables")">
                             Allocate Book
-                            <i class="material-icons">bubble_chart</i>
+                            <i class="fas fa-book"></i>
                         </a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link"
-                           href="@Url.Action("Returnbook","book")">
+                           href="@Url.Action("Create","BookReturnTables")">
                             Book Returned
-                            <i class="material-icons">bubble_chart</i>
+                            <i class="fas fa-retweet"></i>
+                            @*<i class="material-icons">bubble_chart</i>*@
                         </a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link"
-                           href="@Url.Action("createstudent","student")">
-                            Report
-                            <i class="material-icons">notifications</i>
+                           href="@Url.Action("Create","BookFineTables")">
+                            Late Charges
+                            <i class="fas fa-clock"></i>
+                            @*<i class="material-icons">notifications</i>*@
                         </a>
                     </li>
-                    <!-- <li class="nav-item active-pro ">
+                  
+                                       
+    <!-- <li class="nav-item active-pro ">
                           <a class="nav-link" href="./upgrade.html">
                               <i class="material-icons">unarchive</i>
                               <p>Upgrade to PRO</p>
@@ -116,14 +121,14 @@
                     <div class="navbar-wrapper">
                         <a class="navbar-brand" href="javascript:void(0)">@ViewBag.Title</a>
                     </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+                    @*<button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="navbar-toggler-icon icon-bar"></span>
                         <span class="navbar-toggler-icon icon-bar"></span>
                         <span class="navbar-toggler-icon icon-bar"></span>
-                    </button>
+                    </button>*@
                     <div class="collapse navbar-collapse justify-content-end">
-                        <form class="navbar-form">
+                        @*<form class="navbar-form">
                             <div class="input-group no-border">
                                 <input type="text" value="" class="form-control" placeholder="Search...">
                                 <button type="submit" class="btn btn-default btn-round btn-just-icon">
@@ -131,7 +136,7 @@
                                     <div class="ripple-container"></div>
                                 </button>
                             </div>
-                        </form>
+                        </form>*@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="javascript:void(0)">
@@ -141,31 +146,45 @@
                                     </p>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">notifications</i>
-                                    <span class="notification">5</span>
-                                    <p class="d-lg-none d-md-block">
-                                        Some Actions
-                                    </p>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="javascript:void(0)">Mike John responded to your email</a>
-                                    <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
-                                    <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
-                                    <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
-                                    <a class="dropdown-item" href="javascript:void(0)">Another One</a>
-                                </div>
-                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0)">
-                                    <i class="material-icons">person</i>
-                                    <p class="d-lg-none d-md-block">
-                                        Account
-                                    </p>
+                                <a class="nav-link"
+                                   href="@Url.Action("logout","Home")">
+                                     <i class="fas fa-sign-out-alt"></i>
+                                     Logout
                                 </a>
+                                @*<a class="nav-link" href="javascript:void(0)">
+        <i class="material-icons">dashboard</i>
+        <p class="d-lg-none d-md-block">*@
+                                @*Stats
+            </p>
+        </a>*@
                             </li>
-                        </ul>
+
+                            @*<li class="nav-item dropdown">
+            <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">notifications</i>
+                <span class="notification">5</span>
+                <p class="d-lg-none d-md-block">
+                    Some Actions
+                </p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="javascript:void(0)">Mike John responded to your email</a>
+                <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
+                <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
+                <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
+                <a class="dropdown-item" href="javascript:void(0)">Another One</a>
+            </div>
+        </li>*@
+                            <li class="nav-item">
+
+                                <i class="material-icons">person</i>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                        <li>@User.Identity.Name</li>}
+
+                                </li>
+                            </ul>
                     </div>
                 </div>
             </nav>
@@ -591,7 +610,7 @@
                 </div>
                 </div>
             <footer class="footer">
-                <div class="container-fluid">
+                @*<div class="container-fluid">
                     <nav class="float-left">
                         <ul>
                             <li>
@@ -616,11 +635,11 @@
                             </li>
                         </ul>
                     </nav>
-                    @*<div class="copyright float-right" id="date">
+                    <div class="copyright float-right" id="date">
             , made with <i class="material-icons">favorite</i> by
             <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-        </div>*@
-                    @*</div>
+        </div>
+                    </div>*@
                 </footer>
                 <script>
                     const x = new Date().getFullYear();
@@ -628,8 +647,8 @@
                     date.innerHTML = '&copy; ' + x + date.innerHTML;
                 </script>
             </div>
-        </div>*@
-                    <div class="fixed-plugin">
+        </div>
+                    <!--<div class="fixed-plugin">
                         <div class="dropdown show-dropdown">
                             <a href="#" data-toggle="dropdown">
                                 <i class="fa fa-cog fa-2x"> </i>
@@ -671,14 +690,14 @@
                                 </li>
                                 <li class="button-container">
                                     <a href="https://www.creative-tim.com/product/material-dashboard-dark" target="_blank" class="btn btn-primary btn-block">Free Download</a>
-                                </li>
+                                </li>-->
                                 <!-- <li class="header-title">Want more components?</li>
                     <li class="button-container">
                         <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
                           Get the pro version
                         </a>
                     </li> -->
-                                <li class="button-container">
+                                <!--<li class="button-container">
                                     <a href="https://demos.creative-tim.com/material-dashboard-dark/docs/2.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
                                         View Documentation
                                     </a>
@@ -695,7 +714,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div>-->
                     <!--   Core JS Files   -->
                     <script src="~/Template/assets/js/core/jquery.min.js"></script>
                     <script src="~/Template/assets/js/core/popper.min.js"></script>
@@ -728,7 +747,7 @@
                     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
                     <script src="~/Template/assets/demo/demo.js"></script>
                     <script>
-                        $(document).ready(function () {
+                   $(document).ready(function () {
                             $().ready(function () {
                                 $sidebar = $('.sidebar');
 
@@ -896,6 +915,8 @@
 
                         });
                     </script>
+   
+    @RenderSection("scripts]s",required:false)
 </body>
 
 </html>

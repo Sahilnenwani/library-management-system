@@ -1,18 +1,17 @@
 ﻿@model libraryproject.BookReturnTable
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Book Retrun Entry";
     Layout = "~/Views/Shared/sharedview.cshtml";
 }
 
-<h2>Create</h2>
+
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>BookReturnTable</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -31,9 +30,13 @@
                 <input type="text" class="form-control" disabled>
             </div>
         </div>
+    </div>
 
 
-        <div class="col-md-3">
+
+    <div class="form-group row" style="margin-top:30px">
+
+        <div class="col-md-3" @*style="margin-left:100PX"*@>
             <div class="nav-item dropdown">
                 <label class="bmd-label-floating">Book ID</label>
                 @Html.DropDownList("BookID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
@@ -54,17 +57,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     <!--<div class="form-group">
         @Html.LabelFor(model => model.BookID, "BookID", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -74,8 +66,8 @@
     </div>
 
     <div class="form-group">-->
-        @*@Html.LabelFor(model => model.StudentID, "StudentID", htmlAttributes: new { @class = "control-label col-md-2" })*@
-        <!--<div class="col-md-10">
+    @*@Html.LabelFor(model => model.StudentID, "StudentID", htmlAttributes: new { @class = "control-label col-md-2" })*@
+    <!--<div class="col-md-10">
             <label class="bmd-label-floating">Book ID</label>
 
             @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "form-control" })
@@ -83,40 +75,57 @@
         </div>
     </div>-->
 
-    <div class="form-group">
+    <div class="form-group" style="margin-top:30px">
         @*@Html.LabelFor(model => model.IssueDate, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        <div class="col-md-10">
-            <label class="bmd-label-floating">Issue Date</label>
+        <div class="col-md-6">
+            <label class="bmd-label-static" @*style="margin-top"*@>Issue Date</label>
 
-            @Html.EditorFor(model => model.IssueDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.IssueDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
             @Html.ValidationMessageFor(model => model.IssueDate, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="margin-top:30px">
         @*@Html.LabelFor(model => model.ReturnDate, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        <div class="col-md-10">
-            <label class="bmd-label-floating">Return Date</label>
+        <div class="col-md-6">
+            <label class="bmd-label-static">Return Date</label>
 
-            @Html.EditorFor(model => model.ReturnDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.ReturnDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
             @Html.ValidationMessageFor(model => model.ReturnDate, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="margin-top:30px">
         @*@Html.LabelFor(model => model.CurrentDate, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        <div class="col-md-10">
-            <label class="bmd-label-floating">Current Date</label>
-            @Html.EditorFor(model => model.CurrentDate, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="col-md-6">
+            <label class="bmd-label-static">Current Date</label>
+            @Html.EditorFor(model => model.CurrentDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
             @Html.ValidationMessageFor(model => model.CurrentDate, "", new { @class = "text-danger" })
         </div>
     </div>
 
+    <div class="form-group row" style="margin-top:30px">
+        <div class="col-8 offset-4 row">
 
-    <button type="submit" class="btn btn-primary pull-center">Create</button>
+            <div class="col">
+                <input type="submit" class="btn btn-primary  w-100" value="Create" />
+            </div>
+            <div class="col">
+                @*<a asp-action="Index" class="btn btn-primary w-100"><i class="fas fa-sign-out-alt"></i>Back</a>*@
+                <a href="@Url.Action("Index","BookReturnTables")" class="btn btn-primary w-100">
+                    <i class="fas fa-sign-out-alt"></i> &nbsp; Back
+                </a>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
 </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

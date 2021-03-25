@@ -11,6 +11,7 @@ namespace libraryproject
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class BookTable
     {
@@ -25,12 +26,24 @@ namespace libraryproject
         public int BookID { get; set; }
         public int DepartmentID { get; set; }
         public int BookTypeID { get; set; }
+        [Required(ErrorMessage = "Please enter Book Titile"), MaxLength(30)]
         public string BookTitle { get; set; }
+        [Required(ErrorMessage = "Please enter Author Name"), MaxLength(30)]
         public string Author { get; set; }
+        [Required(ErrorMessage = "Please enter Book Name"), MaxLength(30)]
         public string BookName { get; set; }
+        [Required(ErrorMessage = "Please enter Edition")]
+        [Range(1,50, ErrorMessage = "Please enter valid Edition")]
+
         public double Edition { get; set; }
+        [Required(ErrorMessage = "Please enter Total Copies")]
+        [Range(1,30, ErrorMessage = "Please enter valid number of Copies")]
         public int TotalCopies { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public System.DateTime RegDate { get; set; }
+        [Required(ErrorMessage = "Please enter price")]
+        [Range(100,40000, ErrorMessage = "Please enter valid Edition")]
         public double Price { get; set; }
         public string Description { get; set; }
     

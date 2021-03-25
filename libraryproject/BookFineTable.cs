@@ -9,6 +9,7 @@
 
 namespace libraryproject
 {
+    using System.ComponentModel.DataAnnotations;
     using System;
     using System.Collections.Generic;
     
@@ -17,8 +18,18 @@ namespace libraryproject
         public int BookFineID { get; set; }
         public int BookID { get; set; }
         public int StudentID { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public System.DateTime FineDate { get; set; }
+        [Required]
+        [Range(5, 600, ErrorMessage = "Please enter correct value")]
+
+
+
         public double FineAmount { get; set; }
+        [Required]
+        [Range(5, 600, ErrorMessage = "Please enter valid day")]
+
         public int NoOfDays { get; set; }
     
         public virtual BookTable BookTable { get; set; }
