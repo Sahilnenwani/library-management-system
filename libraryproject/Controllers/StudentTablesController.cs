@@ -8,16 +8,22 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using libraryproject;
+using libraryproject.FactoryManager;
+using libraryproject.FactoryMethod;
 using libraryproject.filters;
+using libraryproject.Logger;
 
 namespace libraryproject.Controllers
 {
     [Authorize]
     [AuthorizedUser]
-    public class StudentTablesController : Controller
+    public class StudentTablesController : BaseController
     {
+       
         private library_management_systemEntities1 db = new library_management_systemEntities1();
 
+        
+                
         // GET: StudentTables
         public ActionResult Index()
         {
@@ -57,6 +63,11 @@ namespace libraryproject.Controllers
         {
             if (ModelState.IsValid)
             {
+                StudentFactoryManager studfactory = new StudentFactoryManager();
+                IStudentManger studManager = studfactory.GetStudentManager(studentTable.StuentTypeID);
+               ViewBag.Getbook= studManager.GetBooks();
+             ViewBag.GetDays= studManager.GetDays();
+
                 db.StudentTables.Add(studentTable);
                 db.SaveChanges();
                 return RedirectToAction("Index");

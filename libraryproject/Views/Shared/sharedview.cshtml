@@ -20,6 +20,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="~/Template/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="~/Template/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
     <title>
         @ViewBag.Title
     </title>
@@ -33,7 +34,7 @@
     <link href="~/Template/assets/demo/demo.css" rel="stylesheet" />
     <link href="~/Template/links/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="~/Template/fontausome/css/all.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 
 <body class="dark-edition">
@@ -147,8 +148,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
-                                   href="@Url.Action("logout","Home")">
+                                @*<input type="submit" name="Lagout" onclick="return checklogin()" <i class="fas fa-sign-out-alt"></i>/>*@
+                                <a href="@Url.Action("logout","Home")" onclick="return checklogin()" class="nav-link">
                                      <i class="fas fa-sign-out-alt"></i>
                                      Logout
                                 </a>
@@ -746,7 +747,29 @@
                     <script src="~/Template/assets/js/material-dashboard.js?v=2.1.0"></script>
                     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
                     <script src="~/Template/assets/demo/demo.js"></script>
+                    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>               
                     <script>
+                        function checklogin() {
+                            Swal.fire({
+                                title: 'Do you want to save the changes?',
+                                showDenyButton: true,
+                                showCancelButton: true,
+                                confirmButtonText: `Save`,
+                                denyButtonText: `Don't save`,
+                            }).then((result) => {
+                                /* Read more about isConfirmed, isDenied below */
+                                if (result.isConfirmed) {
+                                    Swal.fire('Saved!', '', 'success')
+                                } else if (result.isDenied) {
+                                    Swal.fire('Changes are not saved', '', 'info')
+                                }
+                            })
+                        }
+                    </script>                
+    <script>
+       
+                     
+        
                    $(document).ready(function () {
                             $().ready(function () {
                                 $sidebar = $('.sidebar');

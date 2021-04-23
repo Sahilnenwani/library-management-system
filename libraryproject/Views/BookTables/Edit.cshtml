@@ -40,7 +40,7 @@
         <div class="col-md-3">
             <div class="nav-item dropdown">
                 <label class="bmd-label-floating">Department</label>
-                @Html.DropDownList("DepartmentID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                @Html.DropDownList("DepartmentID", null, "--Select Department--", htmlAttributes: new { @class = "nav-link dropdown-toggle" })
                 @*@Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "form-control" })*@
             </div>
         </div>
@@ -48,8 +48,10 @@
         <div class="col-md-3">
             <div class="nav-item dropdown">
                 <label class="bmd-label-floating">Book type</label>
-                @Html.DropDownList("BookTypeID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
-                @*@Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "form-control" })*@
+              
+                @Html.DropDownList("BookTypeID", null, "--Select type--", htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                @Html.ValidationMessageFor(model => model.BookTypeID, "", new { @class = "text-danger" })
+        
             </div>
         </div>
 
@@ -65,7 +67,7 @@
     <div class="row" style="margin-top:20px">
         <div class="form-group">
             @*@Html.LabelFor(model => model.BookTitle, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
+            <div class="col-md">
                 <label class="bmd-label-floating">Book Title</label>
                 @Html.EditorFor(model => model.BookTitle, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BookTitle, "", new { @class = "text-danger" })
@@ -74,7 +76,7 @@
 
         <div class="form-group">
             @*@Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
+            <div class="col-md">
                 <label class="bmd-label-floating">Author</label>
                 @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
@@ -84,7 +86,7 @@
     <div class="row" style="margin-top:20px">
         <div class="form-group">
             @*@Html.LabelFor(model => model.BookName, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
+            <div class="col-md">
                 <label class="bmd-label-floating">BookName</label>
                 @Html.EditorFor(model => model.BookName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
@@ -93,7 +95,7 @@
 
         <div class="form-group">
             @*@Html.LabelFor(model => model.Edition, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
+            <div class="col-md">
                 <label class="bmd-label-floating">Edition</label>
                 @Html.EditorFor(model => model.Edition, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Edition, "", new { @class = "text-danger" })

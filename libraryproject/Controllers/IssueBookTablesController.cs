@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using libraryproject;
+using libraryproject.Factory.Abstarct_Factory;
 using libraryproject.filters;
 
 namespace libraryproject.Controllers
@@ -57,6 +58,8 @@ namespace libraryproject.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                
                 db.IssueBookTables.Add(issueBookTable);
                 db.SaveChanges();
                 return RedirectToAction("Index");

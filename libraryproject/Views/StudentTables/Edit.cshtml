@@ -69,7 +69,7 @@
         <div class="col-md-4">
             <div class="nav-item dropdown">
                 <label class="bmd-label-floating">Student Type</label>
-                @Html.DropDownList("StuentTypeID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                @Html.DropDownList("StuentTypeID", null, "--Select Department--", htmlAttributes: new { @class = "nav-link dropdown-toggle" })
                 @*@Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "form-control" })*@
             </div>
         </div>
@@ -78,8 +78,8 @@
         <div class="col-md-4">
             <div class="nav-item dropdown" @*dropdown*@>
 
-                <label class="bmd-label-floating">Department ID</label>
-                @Html.DropDownList("DepartmentID", null, htmlAttributes: new { @lass = "nav-link dropdown-toggle", @class = "rbgwhitelink" })
+                <label class="bmd-label-floating">Department</label>
+                @Html.DropDownList("DepartmentID", null, "--Select Department--", htmlAttributes: new { @lass = "nav-link dropdown-toggle", @class = "rbgwhitelink" })
                 @*@Html.ValidationMessageFor(model => model.DepartmentID, "", new { @class = "form-control" })*@
 
             </div>

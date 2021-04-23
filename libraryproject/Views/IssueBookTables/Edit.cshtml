@@ -36,7 +36,7 @@
                     <label class="bmd-label-floating">Student Name</label>
                     @*@Html.LabelFor(model => model.StudentID, "StudentID", htmlAttributes: new { @class = "nav-link dropdown-toggle" })*@
 
-                    @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                    @Html.DropDownList("StudentID", null, "--Select Student--", htmlAttributes: new { @class = "nav-link dropdown-toggle" })
                     @*@Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
                         @Html.DropDownList("StuentTypeID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })*@
                 </div>
@@ -44,7 +44,7 @@
             <div class="col-md-3" @*style="margin-left:100PX"*@>
                 <div class="nav-item dropdown">
                     <label class="bmd-label-floating">Book ID</label>
-                    @Html.DropDownList("BookID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                    @Html.DropDownList("BookID", null, "--Select Book--", htmlAttributes: new { @class = "nav-link dropdown-toggle" })
                     @*@Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "form-control" })*@
                 </div>
             </div>

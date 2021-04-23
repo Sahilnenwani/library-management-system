@@ -34,16 +34,16 @@
 
         <div class="col-md-3" @*style="margin-left:100PX"*@>
             <div class="nav-item dropdown">
-                <label class="bmd-label-floating">Book ID</label>
-                @Html.DropDownList("BookID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                <label class="bmd-label-floating">Book</label>
+                @Html.DropDownList("BookID", null, "--Select Book--", htmlAttributes: new { @class = "nav-link dropdown-toggle" })
                 @*@Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "form-control" })*@
             </div>
         </div>
 
         <div class="col-md-3">
             <div class="nav-item dropdown">
-                <label class="bmd-label-floating">Student ID</label>
-                @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "nav-link dropdown-toggle" })
+                <label class="bmd-label-floating" >Student</label>
+                @Html.DropDownList("StudentID", null, "--Select student--", htmlAttributes: new { @class = "nav-link dropdown-toggle" })
                 @*@Html.ValidationMessageFor(model => model.StuentTypeID, "", new { @class = "form-control" })*@
             </div>
         </div>

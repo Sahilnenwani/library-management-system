@@ -3634,33 +3634,43 @@
     <Compile Include="BookTypeTable.cs">
       <DependentUpon>Librarymanagementdata.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\bookController.cs" />
+    <Compile Include="Bridge Method\CardPayment.cs" />
+    <Compile Include="Bridge Method\OnlinePayment.cs" />
+    <Compile Include="Bridge Method\HBLpaymentsystem.cs" />
+    <Compile Include="Bridge Method\IPaymentSystem.cs" />
+    <Compile Include="Bridge Method\EassypaisapaymentSystem.cs" />
+    <Compile Include="Bridge Method\Payment.cs" />
+    <Compile Include="Bridge Method\Program.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BookFineTablesController.cs" />
     <Compile Include="Controllers\BookReturnTablesController.cs" />
     <Compile Include="Controllers\BookTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IssueBookTablesController.cs" />
     <Compile Include="Controllers\loginController.cs" />
-    <Compile Include="Controllers\studentController.cs" />
     <Compile Include="Controllers\StudentTablesController.cs" />
     <Compile Include="DepartmentTable.cs">
       <DependentUpon>Librarymanagementdata.tt</DependentUpon>
     </Compile>
+    <Compile Include="FactoryManager\IStudentManger.cs" />
+    <Compile Include="FactoryManager\MemberStudentManager.cs" />
+    <Compile Include="FactoryManager\NonMemberStudentManger.cs" />
+    <Compile Include="FactoryMethod\StudentFactoryManager.cs" />
     <Compile Include="Factory\Abstarct_Factory\AlltheBooks.cs" />
-    <Compile Include="Factory\Abstarct_Factory\Booksystemfactory.cs" />
-    <Compile Include="Factory\Abstarct_Factory\Electrialfactory.cs" />
-    <Compile Include="Factory\Abstarct_Factory\Entrepreneurshipfactory.cs" />
-    <Compile Include="Factory\Abstarct_Factory\IBookfactory.cs" />
+    <Compile Include="Factory\Abstarct_Factory\Abstract Product\Booksystemfactory.cs" />
+    <Compile Include="Factory\Abstarct_Factory\Client\BookSystemManger.cs" />
+    <Compile Include="Factory\Abstarct_Factory\ConcreteFactory\Electrialfactory.cs" />
+    <Compile Include="Factory\Abstarct_Factory\ConcreteFactory\Entrepreneurshipfactory.cs" />
+    <Compile Include="Factory\Abstarct_Factory\Abstract Interface\IBookfactory.cs" />
     <Compile Include="Factory\Abstarct_Factory\Booktypes.cs" />
-    <Compile Include="Factory\Abstarct_Factory\Electrial.cs" />
-    <Compile Include="Factory\Abstarct_Factory\Enterpreneurship.cs" />
-    <Compile Include="Factory\Abstarct_Factory\IAlltheBooks.cs" />
-    <Compile Include="Factory\Abstarct_Factory\IBooktypes.cs" />
+    <Compile Include="Factory\Abstarct_Factory\ConcreteProduct\Electrial.cs" />
+    <Compile Include="Factory\Abstarct_Factory\ConcreteProduct\Enterpreneurship.cs" />
+    <Compile Include="Factory\Abstarct_Factory\Abstract Product\IAlltheBooks.cs" />
+    <Compile Include="Factory\Abstarct_Factory\Abstract Product\IBooktypes.cs" />
     <Compile Include="Factory\Abstarct_Factory\enumarations.cs" />
-    <Compile Include="Factory\Abstarct_Factory\IBookcategories.cs" />
-    <Compile Include="Factory\Abstarct_Factory\Machinelearning.cs" />
-    <Compile Include="Factory\Abstarct_Factory\Machinelearningfactory.cs" />
+    <Compile Include="Factory\Abstarct_Factory\Abstract Product\IBookcategories.cs" />
+    <Compile Include="Factory\Abstarct_Factory\ConcreteProduct\Machinelearning.cs" />
+    <Compile Include="Factory\Abstarct_Factory\ConcreteFactory\Machinelearningfactory.cs" />
     <Compile Include="filters\AuthorizedUser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -3683,6 +3693,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Librarymanagementdata.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Logger\ILog.cs" />
+    <Compile Include="Logger\Log.cs" />
     <Compile Include="login.cs">
       <DependentUpon>Librarymanagementdata.tt</DependentUpon>
     </Compile>
@@ -3910,17 +3922,6 @@
     <Content Include="Template\package.json" />
     <Content Include="Template\README.md" />
     <Content Include="Views\login\login.cshtml" />
-    <Content Include="Views\student\createstudent.cshtml" />
-    <Content Include="Views\book\Addbook.cshtml" />
-    <Content Include="Views\book\Managebook.cshtml" />
-    <Content Include="Views\book\Issuebook.cshtml" />
-    <Content Include="Views\book\Returnbook.cshtml" />
-    <Content Include="Views\book\BookFine.cshtml" />
-    <Content Include="Views\book\deleteStudent.cshtml" />
-    <Content Include="Views\student\ViewStudent.cshtml" />
-    <Content Include="Views\student\updateStudent.cshtml" />
-    <Content Include="Views\student\deleteStudent.cshtml" />
-    <Content Include="Views\book\updateBook.cshtml" />
     <Content Include="Template\links\vendor\bootstrap\js\bootstrap.bundle.js.map" />
     <Content Include="Template\links\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="Template\links\vendor\bootstrap\js\bootstrap.js.map" />
@@ -4322,7 +4323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

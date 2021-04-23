@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using libraryproject;
+using libraryproject.Bridge_Method;
 using libraryproject.filters;
 
 namespace libraryproject.Controllers
@@ -58,6 +59,17 @@ namespace libraryproject.Controllers
         {
             if (ModelState.IsValid)
             {
+                Payment order = new CardPayment();
+                order._IPaymentSystem = new HBLpaymentsystem();
+                order.MakePayment();
+
+                order._IPaymentSystem = new EassypaisapaymentSystem();
+                order.MakePayment();
+
+                order = new OnlinePayment();
+                order._IPaymentSystem = new EassypaisapaymentSystem();
+                order.MakePayment();
+
                 db.BookFineTables.Add(bookFineTable);
                 db.SaveChanges();
                 return RedirectToAction("Index");
